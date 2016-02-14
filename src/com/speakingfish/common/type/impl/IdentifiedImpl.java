@@ -16,7 +16,7 @@ public class IdentifiedImpl<ID, T> implements Identified<ID, T>, Comparable<Iden
         _id = id;
     }
 
-    @Override public ID id() { return _id; }
+    public ID id() { return _id; }
 
     @Override public String toString() { return id().toString(); }
 
@@ -36,7 +36,7 @@ public class IdentifiedImpl<ID, T> implements Identified<ID, T>, Comparable<Iden
         return Equals.equals(this.id(), ((Identified<ID, ?>) obj).id());
     }
 
-    @Override public int compareTo(Identified<ID, ?> o) {
+    public int compareTo(Identified<ID, ?> o) {
         return Compares.compareObjects(id(), o.id());
     }
 }

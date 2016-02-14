@@ -12,6 +12,6 @@ public class ImmutableOriginatedGetterImpl<ORIGIN, T> extends ImmutableGetter<T>
         _origin = origin;
     }
 
-    @Override public ORIGIN origin() { return _origin; }
+    public ORIGIN origin() { return _origin; }
 
 }

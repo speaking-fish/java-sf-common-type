@@ -16,8 +16,8 @@ public class DefaultValueImpl<ORIGIN, T> implements DefaultValue<ORIGIN, T> {
         _defaultValue = defaultValue;
     }
 
-    @Override public ORIGIN origin() { return _origin; }
-    @Override public T defaultValue() { return _defaultValue; }
+    public ORIGIN origin() { return _origin; }
+    public T defaultValue() { return _defaultValue; }
 
     @Override public int hashCode() {
         return

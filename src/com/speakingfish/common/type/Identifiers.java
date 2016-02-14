@@ -64,23 +64,23 @@ public class Identifiers {
     }
     
     public static <ID, T> T castGet(Map<?, ?> map, Identified<ID, T> key) {
-        return typedGet(castMap(map, Typecasts.entryTyped(idTyped(key), classTyped(Object.class))), key);
+        return typedGet(castMap(map, Typecasts.typedEntry(idTyped(key), classTyped(Object.class))), key);
     }
     
     public static <ID, T> T castPut(Map<?, ?> map, Identified<ID, T> key, T value) {
-        return typedPut(castMap(map, Typecasts.entryTyped(idTyped(key), classTyped(Object.class))), key, value);
+        return typedPut(castMap(map, Typecasts.typedEntry(idTyped(key), classTyped(Object.class))), key, value);
     }
     
     public static <ID, T> T castPutIfAbsent(ConcurrentMap<?, ?> map, Identified<ID, T> key, T value) {
-        return typedPutIfAbsent(castConcurrentMap(map, Typecasts.entryTyped(idTyped(key), classTyped(Object.class))), key, value);
+        return typedPutIfAbsent(castConcurrentMap(map, Typecasts.typedEntry(idTyped(key), classTyped(Object.class))), key, value);
     }
     
     public static <ID, T, P> T castPutIfAbsent(ConcurrentMap<?, ?> map, Identified<ID, T> key, Creator<? extends T, P> creator, P params) {
-        return typedPutIfAbsent(castConcurrentMap(map, Typecasts.entryTyped(idTyped(key), classTyped(Object.class))), key, creator, params);
+        return typedPutIfAbsent(castConcurrentMap(map, Typecasts.typedEntry(idTyped(key), classTyped(Object.class))), key, creator, params);
     }
     
     public static <ID, T> T castRemove(Map<?, ?> map, Identified<ID, T> key) {
-        return typedRemove(castMap(map, Typecasts.entryTyped(idTyped(key), classTyped(Object.class))), key);
+        return typedRemove(castMap(map, Typecasts.typedEntry(idTyped(key), classTyped(Object.class))), key);
     }
     
 }
