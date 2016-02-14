@@ -55,7 +55,7 @@ public class Identifiers {
         if(null != result) {
             return result;
         }
-        return typedPutIfAbsent(map, key, creator.create(params));
+        return typedPutIfAbsent(map, key, creator.apply(params));
     }
     
     @SuppressWarnings("unchecked")
