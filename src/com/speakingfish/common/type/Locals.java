@@ -19,5 +19,5 @@ public class Locals {
     public static <CONTEXT, T> LocalNamed<CONTEXT, T> local(Typed<CONTEXT> context, String name) {
         return new LocalNamedImpl<CONTEXT, T>(name);
     }
-
+    
 }
