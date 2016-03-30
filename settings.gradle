@@ -1,0 +1,4 @@
+includeFlat 'java-sf-common-compatibility'
+includeFlat 'java-sf-common-function'
+includeFlat 'java-sf-common'
+includeFlat 'java-sf-common-value'
