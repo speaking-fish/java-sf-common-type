@@ -32,6 +32,9 @@ import com.speakingfish.common.mapper.Mappers;
  */
 public class Typecasts {
     
+    public static final Void VOID = null;
+    
+    
     public static <T> T typeOf(Typed<T> proto) { return null; }
     
     public static <T> Typed<T> typed() { return null; }
@@ -44,8 +47,8 @@ public class Typecasts {
     
     public static <T> Typed<T> getterTyped(Getter<T> src) { return null; }
     
-    public static <C, A extends C, B extends C> boolean equals(A a, B b, Typed<C> c) {
-        return Equals.equals(a, b);
+    public static <C, A extends C, B extends C> boolean equalsOf(A a, B b, Typed<C> c) {
+        return Equals.<C, B>equalsOf(a, b);
     }
     
     //public static <T> Typed<T> elementTyped(Collection<T> src) { return null; }
@@ -159,6 +162,16 @@ public class Typecasts {
     public static <T> Iterator<T> castIteratorTo(Typed<T> proto, Iterator<?> src) {
         return (Iterator<T>) src;
     }
+
+    @SuppressWarnings("unchecked")
+    public static <T> Iterable<T> castIterable(Iterable<?> src, Typed<T> proto) {
+        return (Iterable<T>) src;
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static <T> Iterable<T> castIterableTo(Typed<T> proto, Iterable<?> src) {
+        return (Iterable<T>) src;
+    }
     
     @SuppressWarnings("unchecked")
     public static <K, V> Map<K, V> castMap(Map<?, ?> src, Typed<Entry<K, V>> proto) {
@@ -193,5 +206,5 @@ public class Typecasts {
     public static <T> Acceptor<T> acceptAssigned(Typed<T> proto) {
         return Mappers.acceptAssigned();
     }
-    
+
 }

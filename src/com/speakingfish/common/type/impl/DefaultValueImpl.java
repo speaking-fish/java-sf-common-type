@@ -1,9 +1,9 @@
 package com.speakingfish.common.type.impl;
 
-import com.speakingfish.common.Equals;
 import com.speakingfish.common.type.DefaultValue;
 
 import static com.speakingfish.common.Hashes.*;
+import static com.speakingfish.common.Equals.*;
 
 public class DefaultValueImpl<ORIGIN, T> implements DefaultValue<ORIGIN, T> {
     
@@ -32,8 +32,8 @@ public class DefaultValueImpl<ORIGIN, T> implements DefaultValue<ORIGIN, T> {
         return true
             && (null != obj)
             && (getClass() == obj.getClass())
-            && Equals.equals(this.origin      (), ((DefaultValueImpl<Object, Object>) obj).origin      ())
-            && Equals.equals(this.defaultValue(), ((DefaultValueImpl<Object, Object>) obj).defaultValue())
+            && equalsOf(this.origin      (), ((DefaultValueImpl<ORIGIN, T>) obj).origin      ())
+            && equalsOf(this.defaultValue(), ((DefaultValueImpl<ORIGIN, T>) obj).defaultValue())
             ;
     }
 

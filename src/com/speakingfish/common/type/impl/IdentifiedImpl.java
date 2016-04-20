@@ -1,10 +1,10 @@
 package com.speakingfish.common.type.impl;
 
-import com.speakingfish.common.Equals;
-import com.speakingfish.common.Compares;
 import com.speakingfish.common.type.Identified;
 
 import static com.speakingfish.common.Hashes.*;
+import static com.speakingfish.common.Equals.*;
+import static com.speakingfish.common.Compares.*;
 
 public class IdentifiedImpl<ID, T> implements Identified<ID, T>, Comparable<Identified<ID, ?>> {
 
@@ -33,10 +33,10 @@ public class IdentifiedImpl<ID, T> implements Identified<ID, T>, Comparable<Iden
         if(!(obj instanceof IdentifiedImpl))
             return false;
         
-        return Equals.equals(this.id(), ((Identified<ID, ?>) obj).id());
+        return equalsOf(this.id(), ((Identified<ID, ?>) obj).id());
     }
 
     public int compareTo(Identified<ID, ?> o) {
-        return Compares.compareObjects(id(), o.id());
+        return compareObjects(id(), o.id());
     }
 }
