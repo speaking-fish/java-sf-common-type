@@ -66,6 +66,8 @@ public class Typecasts {
     public static <T> Typed<T> mapValueTyped(Map<?, T> src) { return null; }
     
     public static <K, V> Typed<Entry<K, V>> typedEntry(Typed<K> keyTyped, Typed<V> valueTyped) { return null; }
+
+    public static <K, V> Typed<Entry<K, V>> typedEntry(Map<K, V> src) { return null; }
     
     public static <T> Typed<T> entryKeyTyped  (Entry<T, ?> src) { return null; }
     public static <T> Typed<T> entryValueTyped(Entry<?, T> src) { return null; }
